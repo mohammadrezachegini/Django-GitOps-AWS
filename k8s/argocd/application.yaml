@@ -12,7 +12,7 @@ spec:
   # WHERE to get the manifests from (your GitHub repo)
   source:
     repoURL: https://github.com/mohammadrezachegini/django-gitops-aws.git
-    targetRevision: main        # Watch the main branch
+    targetRevision: master        # Watch the main branch
     path: k8s/overlays/local    # Use the local overlay
 
   # WHERE to deploy (the local K3s cluster)
