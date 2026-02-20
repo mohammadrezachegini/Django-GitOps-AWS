@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Point to the base — all base resources are included automatically
+bases:
+  - ../../base
+
+# Add a namespace for local environment
+namespace: local
+
+# Patch only what's different for local:
+# - Enable DEBUG mode
+# - Use locally built image (not ECR)
+# - Set ALLOWED_HOSTS to include your laptop IP
+patches:
+  - path: patches/deployment-patch.yaml
+    target:
+      kind: Deployment
+      name: django-api
+
+# commonLabels adds these labels to every resource in this overlay
+commonLabels:
+  environment: local
