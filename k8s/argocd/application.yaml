@@ -11,7 +11,7 @@ spec:
 
   # WHERE to get the manifests from (your GitHub repo)
   source:
-    repoURL: https://github.com/mohammadrezachegini/django-gitops-aws.git
+    repoURL: https://github.com/mohammadrezachegini/Django-GitOps-AWS.git
     targetRevision: master        # Watch the main branch
     path: k8s/overlays/local    # Use the local overlay
 
