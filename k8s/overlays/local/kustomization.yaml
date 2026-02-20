@@ -3,7 +3,7 @@ kind: Kustomization
 
 # "resources" replaces deprecated "bases"
 resources:
-  - ../../base
+  - ../base
 
 namespace: local
 
