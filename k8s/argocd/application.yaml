@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/mohammadrezachegini/django-gitops-aws.git
-    targetRevision: main
+    targetRevision: master
     path: k8s/overlays/dev    # Watch the dev overlay
 
   destination:
