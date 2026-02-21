@@ -11,7 +11,7 @@ namespace: dev
 images:
   - name: django-api
     newName: 381492238320.dkr.ecr.us-east-1.amazonaws.com/django-gitops/django-api
-    newTag: latest    # CI will replace this with the actual git SHA
+    newTag: sha-0116359
 
 patches:
   - path: patches/deployment-patch.yaml
