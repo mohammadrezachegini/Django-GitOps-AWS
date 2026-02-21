@@ -54,19 +54,14 @@ spec:
             httpGet:
               path: /api/posts/
               port: 8000
-            initialDelaySeconds: 30
+            initialDelaySeconds: 60    # was 30
             periodSeconds: 15
-          # Readiness probe: pod only gets traffic when this passes
+            failureThreshold: 5        # add this
+
           readinessProbe:
             httpGet:
               path: /api/posts/
               port: 8000
-            initialDelaySeconds: 15
+            initialDelaySeconds: 30    # was 15
             periodSeconds: 10
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "100m"
-            limits:
-              memory: "256Mi"
-              cpu: "500m"
+            failureThreshold: 5        # add this
