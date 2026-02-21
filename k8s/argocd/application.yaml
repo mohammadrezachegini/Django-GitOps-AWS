@@ -9,7 +9,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/YOUR_USERNAME/django-gitops-aws.git
+    repoURL: https://github.com/mohammadrezachegini/django-gitops-aws.git
     targetRevision: main
     path: k8s/overlays/dev    # Watch the dev overlay
 
