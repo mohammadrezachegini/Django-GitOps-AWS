@@ -8,15 +8,15 @@ echo "=== Bootstrapping EKS ==="
 echo ""
 
 # ── Step 1: Install ArgoCD on EKS ────────────────────────────────────────────
-#echo "Installing ArgoCD on EKS..."
-#kubectl create namespace argocd --dry-run=client -o yaml | kubectl apply -f -
-#kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+echo "Installing ArgoCD on EKS..."
+kubectl create namespace argocd --dry-run=client -o yaml | kubectl apply -f -
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
-#echo "Waiting for ArgoCD to be ready..."
-#kubectl wait --for=condition=available deployment/argocd-server \
-#  -n argocd --timeout=120s
+echo "Waiting for ArgoCD to be ready..."
+kubectl wait --for=condition=available deployment/argocd-server \
+  -n argocd --timeout=120s
 
-#echo ""
+echo ""
 echo "ArgoCD admin password:"
 kubectl -n argocd get secret argocd-initial-admin-secret \
   -o jsonpath="{.data.password}" | base64 -d && echo
@@ -62,6 +62,8 @@ echo "✓ django-secrets created in dev namespace"
 echo ""
 echo "Applying ArgoCD dev application..."
 kubectl apply -f argocd/application-dev.yaml
+kubectl apply -f argocd/application-staging.yaml
+kubectl apply -f argocd/application-prod.yaml
 
 echo ""
 echo "=== Bootstrap complete ==="
