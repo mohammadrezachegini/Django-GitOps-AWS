@@ -9,7 +9,7 @@ namespace: staging
 images:
   - name: django-api
     newName: 381492238320.dkr.ecr.us-east-1.amazonaws.com/django-gitops/django-api
-    newTag: latest    # CI will update this tag
+    newTag: sha-712ea4e
 
 patches:
   - path: patches/deployment-patch.yaml
