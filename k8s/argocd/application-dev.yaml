@@ -11,11 +11,11 @@ spec:
   source:
     repoURL: https://github.com/mohammadrezachegini/django-gitops-aws.git
     targetRevision: master
-    path: k8s/overlays/dev    # Watch the dev overlay
+    path: k8s/overlays/local    # Watch the dev overlay
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: local
 
   syncPolicy:
     automated:
